@@ -80,7 +80,13 @@ const calculateNext = (state) => {
   return accumulator;
 };
 
-const iterate = (state, iterations) => {};
+const iterate = (state, iterations) => {
+  let result = [state];
+  for (let i = 0; i < iterations; i++) {
+    result.push(calculateNext(result[i]));
+  }
+  return result;
+};
 
 const main = (pattern, iterations) => {};
 
