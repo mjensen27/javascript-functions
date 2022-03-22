@@ -60,7 +60,12 @@ const getLivingNeighbors = (cell, state) => {
   return getNeighborsOf(cell).filter((x) => contains.bind(state)(x));
 };
 
-const willBeAlive = (cell, state) => {};
+const willBeAlive = (cell, state) => {
+  return (
+    getLivingNeighbors(cell, state).length == 3 ||
+    (contains.call(state, cell) && getLivingNeighbors(cell, state).length == 2)
+  );
+};
 
 const calculateNext = (state) => {};
 
