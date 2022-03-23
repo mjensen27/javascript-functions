@@ -88,7 +88,11 @@ const iterate = (state, iterations) => {
   return result;
 };
 
-const main = (pattern, iterations) => {};
+const main = (pattern, iterations) => {
+  iterate(startPatterns[pattern], iterations).forEach((x) =>
+    console.log(printCells(x))
+  );
+};
 
 const startPatterns = {
   rpentomino: [
